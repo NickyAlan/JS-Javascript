@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.counter-app {
+    border: 2px solid blue;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#counter {
+    font-size: 12rem;
+    margin: 1rem 0;
+}
+
+.edit-button button {
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+
+.edit-button button:hover {
+    background: blue;
+    color: white;
+}
+
+.calculator {
+    flex: 1;
+    height: 50vh;
+    width: 50vw;
+}
