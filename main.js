@@ -27,4 +27,30 @@ function refresh() {
     save_.innerText = "Previous Counter : "
 }
 
-//https://youtu.be/jS4aFq5-91M?t=5206
+
+let num1 = 6
+let num2 = 4
+let ans = document.getElementById("ans")
+let operator = document.getElementById("operate")
+document.getElementById("num1").innerText = num1
+document.getElementById("num2").innerText = num2
+
+function add() {
+    operator.innerText = "+"
+    ans.innerText = num1 + num2
+}
+
+function subtract() {
+    operator.innerText = "-"
+    ans.innerText = num1 - num2
+}
+
+function divide() {
+    operator.innerText = "/"
+    ans.innerText = num1 / num2
+}
+
+function multiply() {
+    operator.innerText = "x"
+    ans.innerText = num1 * num2
+}

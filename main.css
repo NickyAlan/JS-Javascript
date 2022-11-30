@@ -11,7 +11,8 @@ body {
 }
 
 .counter-app {
-    border: 2px solid blue;
+    border-bottom: 2px solid blue;
+    border-right: 2px solid black;
     width: 50vw;
     height: 50vh;
     display: flex;
@@ -39,8 +40,44 @@ body {
     color: white;
 }
 
-.calculator {
+.calculator-app {
     flex: 1;
     height: 50vh;
     width: 50vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid red;
+}
+
+.numbers {
+    display: flex;
+    margin: 2rem 0;
+    font-size: 4rem;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.operator {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.operator button {
+    font-size: 1rem;
+    border: none;
+    padding: .5rem .6rem;
+    cursor: pointer;
+}
+
+.numbers p {
+    margin: 0 .5rem;
+}
+
+
+.operator button:hover {
+    background: red;
+    color: white;
 }
