@@ -7,13 +7,14 @@
 body {
     width: 100vw;
     height: 100vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50vh;
 }
 
 .counter-app {
     border-bottom: 2px solid blue;
     border-right: 2px solid black;
-    width: 50vw;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -43,7 +44,6 @@ body {
 .calculator-app {
     flex: 1;
     height: 50vh;
-    width: 50vw;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -76,8 +76,49 @@ body {
     margin: 0 .5rem;
 }
 
-
 .operator button:hover {
     background: red;
+    color: white;
+}
+
+.blackjack {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: center;
+    gap: 1rem;
+    border-left: 2px solid black;
+}
+
+.blackjack h1 {
+    font-size: 3rem;
+    color: blue;
+}
+
+.blackjack h1:hover {
+    color: orange;
+    transition: all .2s linear;
+}
+
+.blackjack p {
+    font-size: 1.5rem;
+    transition: all .2s linear;
+}
+
+.blackjack button {
+    /* margin-top: 2rem; */
+    padding: .5rem 0;
+    width: 10rem;
+    font-size: 1rem;
+    background: none;
+    border: 3px solid orange;
+    cursor: pointer;
+    transition: all .2s linear;
+    font-weight: 700;
+}
+
+.blackjack button:hover {
+    background: orange;
     color: white;
 }

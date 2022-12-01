@@ -1,3 +1,5 @@
+// counter
+
 let countNum = document.getElementById("counter")
 let save_ = document.getElementById("previous-counter")
 let count = 0
@@ -28,6 +30,8 @@ function refresh() {
 }
 
 
+// calculator
+
 let num1 = 6
 let num2 = 4
 let ans = document.getElementById("ans")
@@ -54,3 +58,82 @@ function multiply() {
     operator.innerText = "x"
     ans.innerText = num1 * num2
 }
+
+
+// blackjack 
+let cards = [getRandomCard(), getRandomCard()]
+let sum = cards[0] + cards[1]
+let hasBlackjack = false
+let isAlive = true
+let massage = ""
+let message_el = document.getElementById("message-el")
+let sum_el = document.querySelector("#sum-el") // more dynamic
+let cardEl = document.querySelector("#card-el") 
+let player = {
+    name:"playername", 
+    money:0
+}
+let moneyEl = document.querySelector("#money")
+moneyEl.textContent =  player.name + " : " +  player.money + "$"
+
+
+function startGame() {
+    renderGame()
+}
+
+function renderGame() {
+    if (sum < 21) {
+        massage = "Do you want to draw a new card ?"
+        message_el.textContent = massage
+        sum_el.textContent = "Sum : " + sum
+        
+        cardEl.textContent = "Cards : "
+        for (let i=0; i < cards.length; i+=1) {
+            cardEl.textContent += cards[i] + " "
+        }
+    }
+    else if (sum === 21) {
+        massage = "Whooo! You've got Blackjack :)"
+        hasBlackjack = true
+        message_el.textContent = massage
+        sum_el.textContent = "Sum : " + sum
+        player.money += 10
+        moneyEl.textContent = "total money : " + player.money + "$"
+        
+        cardEl.textContent = "Cards : "
+        for (let i=0; i < cards.length; i+=1) {
+            cardEl.textContent += cards[i] + " "
+        }
+    }
+    else {
+        massage = "You're out of the game :("
+        isAlive = false
+        message_el.textContent = massage
+        sum_el.textContent = "Sum : " + sum
+        player.money -= 5
+        moneyEl.textContent = "total money : " + player.money + "$"
+
+        cardEl.textContent = "Cards : "
+        for (let i=0; i < cards.length; i+=1) {
+            cardEl.textContent += cards[i] + " "
+        }
+    }
+}
+
+function newCard() {
+    if (isAlive && !hasBlackjack && massage != "") {
+        cards.push(getRandomCard()) // .append
+        sum = 0
+        for (let i=0; i<cards.length; i+=1) {
+            sum += cards[i]
+        }
+        renderGame()
+    }
+}
+
+function getRandomCard() {
+    // random integer number [1,13]
+    return Math.ceil(Math.random()*13) 
+}
+
+// https://youtu.be/jS4aFq5-91M?t=14464
