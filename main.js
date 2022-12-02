@@ -1,5 +1,4 @@
 // counter
-
 let countNum = document.getElementById("counter")
 let save_ = document.getElementById("previous-counter")
 let count = 0
@@ -70,11 +69,11 @@ let message_el = document.getElementById("message-el")
 let sum_el = document.querySelector("#sum-el") // more dynamic
 let cardEl = document.querySelector("#card-el") 
 let player = {
-    name:"playername", 
+    name:"kris", 
     money:0
 }
-let moneyEl = document.querySelector("#money")
-moneyEl.textContent =  player.name + " : " +  player.money + "$"
+let playerEl = document.querySelector("#player-el")
+playerEl.textContent =  player.name + " : " +  player.money + "$"
 
 
 function startGame() {
@@ -98,7 +97,7 @@ function renderGame() {
         message_el.textContent = massage
         sum_el.textContent = "Sum : " + sum
         player.money += 10
-        moneyEl.textContent = "total money : " + player.money + "$"
+        playerEl.textContent = "total money : " + player.money + "$"
         
         cardEl.textContent = "Cards : "
         for (let i=0; i < cards.length; i+=1) {
@@ -111,7 +110,7 @@ function renderGame() {
         message_el.textContent = massage
         sum_el.textContent = "Sum : " + sum
         player.money -= 5
-        moneyEl.textContent = "total money : " + player.money + "$"
+        playerEl.textContent = "total money : " + player.money + "$"
 
         cardEl.textContent = "Cards : "
         for (let i=0; i < cards.length; i+=1) {
@@ -136,4 +135,17 @@ function getRandomCard() {
     return Math.ceil(Math.random()*13) 
 }
 
-// https://youtu.be/jS4aFq5-91M?t=14464
+
+let largeCountry = [
+    "china",
+    "USA",
+    "india",
+    "indonesia",
+    "pakistan",
+    "russia",
+    "monaco",
+    "tuvalu"
+]
+
+largeCountry.unshift("first Index") // like push
+largeCountry.shift() // remove first index , pop

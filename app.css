@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+}
+
+
+button {
+    width: 8rem;
+    padding: .3rem .5rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+    background: rgb(24, 208, 24);
+}
+
+input {
+    text-transform: lowercase;
+    font-size: 1.2rem;
+    width: 50ch;
+    padding: .3rem;
+    margin-bottom: .1rem;
+}
+
+button:hover {
+    background: rgb(55, 231, 55);;
+}
+
+ul {
+    margin-top: 1rem;
+    font-size: 1rem;
+    list-style: none;
+}
+
+ul a {
+    text-decoration: none;
+    color: black;
+}
+
+ul a:hover {
+    text-decoration: underline;
+    color: green;
+}
