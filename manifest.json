@@ -1,0 +1,13 @@
+{
+    "manifest_version" : 3,
+    "version" : "1.0",
+    "name" : "links saver",
+    "description" : "save it and leave it.",
+    "action" : {
+        "default_popup" : "app.html",
+        "default_icon" : "js.ico"
+    },
+    "permissions" : [
+        "tabs"
+    ]
+}
