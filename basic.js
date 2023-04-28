@@ -51,11 +51,11 @@ let rpsState = document.getElementById('rps-state')
 let rpsScore = 0
 const rpsBtn = document.querySelectorAll('.rps-item')
 rpsBtn.forEach(option => {
-    option.onclick = () => {
+    option.onclick = () =>  {
         randomSelect = rockPaperScissors()
         result = winOrLoss(option.innerHTML, randomSelect)
         if (result == 'lose') {rpsScore-=1} 
-        else if (result == 'win') (rpsScore+=1)
+        else if (result == 'win') {rpsScore+=1}
         rpsState.innerText = '[' + rpsScore + ' | ' + result + '] ' + option.innerHTML + ' : ' + randomSelect 
     }}
 )
@@ -68,7 +68,7 @@ const rockPaperScissors = () => {
 
 const winOrLoss = (human, random) => {
     if (human == random) {
-        return 'tied'
+        return 'tie'
     }
     else if (human == 'rock') {
         if (random == 'paper') {
@@ -88,8 +88,7 @@ const winOrLoss = (human, random) => {
     }
     else if (human == 'scissors') {
         if (random == 'rock') {
-            return 'lose'
-        }
+            return 'lose'}
         else if (random == 'paper') {
             return 'win'
         }
@@ -100,3 +99,20 @@ const rpsResetScore = () => {
     rpsScore = 0
     rpsState.innerText = 'rock paper scissors'
 }
+
+
+// random dog images
+const dogBreed = document.getElementById('dogBreed')
+const dogImage = document.getElementById('dogImage')
+
+const newDog = () => {
+    fetch('https://dog.ceo/api/breeds/image/random')
+        .then(response => response.json())
+        .then(json => {
+            dogImage.src = json.message
+            dogBreed.innerText = json.message.split('/')[4]
+        })
+}
+
+// https://youtu.be/lI1ae4REbFM
+

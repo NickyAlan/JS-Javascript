@@ -1,6 +1,7 @@
 *,*::before,*::after {
     margin: 0;
     padding: 0;
+    font-family: 'cubano';
 }
 
 body {
@@ -137,7 +138,6 @@ body {
 
 /* rock paper scissors */
 .rps-container {
-    font-family: 'cubano';
     flex-direction: column;
     padding-top: 2rem;
     display: flex;
@@ -165,7 +165,6 @@ body {
     border-radius: 10px;
     border: 0;
     font-size: 1.2rem;
-    font-family: 'cubano';
 }
 
 .rps-item:hover {
@@ -179,4 +178,29 @@ body {
     border: 0;
     background: white;
     border-radius: 5px;
+}
+
+.dog-container {
+    width: 100vw;
+    background: #f6f888;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    padding: 2rem 0;
+}
+
+.dog-container img {
+    margin-top: 1rem;
+    width: 300px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+#getNewDog {
+    padding: 1rem 2rem;
+    border: 0;
+    margin: 1rem 0;
+    cursor: pointer;
+    background: white;
 }
