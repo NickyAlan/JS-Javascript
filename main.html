@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="rps-container">
+      <span id="rps-state">rock paper scissors</span>
+      <div class="rps-innerbox">
+        <button class="rps-item">rock</button>
+        <button class="rps-item">paper</button>
+        <button class="rps-item">scissors</button>
+        <button class="reset-score" onclick="rpsResetScore()">reset score</button>
+      </div>
+    </div>
+    <div class="calculator-container">
+      <div class="phone">
+        <div class="calculator">
+          <p>$Bill total</p>
+          <input type="text" id="tipInput" onkeyup="calculateBill()" placeholder="0" />
+          <p>%Tip</p>
+          <input type="text" id="percentInput" onkeyup="calculateBill()" placeholder="0" />
+          
+          <div class="bottom">
+            <div class="people">
+              <p>Peoples</p>
+              <div class="people-btn">
+                <button id="minusBtn" onclick="personAdjust('-')" onkeyup="calculateBill()">-</button>
+                <span id="person">1</span>
+                <button id="plusBtn" onclick="personAdjust('+')" onkeyup="calculateBill()">+</button>
+              </div>
+            </div>
+            <div class="total">
+                <p>Total per person</p>
+                <span id="totalPerPerson">$0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <button class="box" id="red" value="red">0</button>
+      <button class="box" id="yellow" value="yellow">0</button>
+      <button class="box" id="blue" value="blue">0</button>
+      <button id="clearScore">Clear Score</button>
+    </div>
+    <script src="basic.js"></script>
+  </body>
+</html>
